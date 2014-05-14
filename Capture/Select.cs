@@ -17,10 +17,7 @@ namespace Capture
             {
                 return new RecData(this.Left,this.Top,this.Width,this.Height);
             }
-            set
-            {
-                recData = value;
-            }
+           
         }
         
        
@@ -99,8 +96,10 @@ namespace Capture
         }
         void move(object sender, MouseEventArgs e)
         {
-            this.Left += e.X-this.lastClick.X;
-            this.Top += e.Y - this.lastClick.Y;
+           
+                this.Left += e.X - this.lastClick.X;
+                this.Top += e.Y - this.lastClick.Y;
+            
         }
         List<MouseEventHandler> methods = new List<MouseEventHandler>();
         private void Select_MouseUp(object sender, MouseEventArgs e)
@@ -144,7 +143,16 @@ namespace Capture
 
         private void Select_DoubleClick(object sender, EventArgs e)
         {
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
+        }
+
+        private void Select_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Escape)
+            {
+                this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            }
         }
 
         

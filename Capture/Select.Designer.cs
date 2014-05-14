@@ -36,9 +36,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 13);
+            this.label1.Size = new System.Drawing.Size(260, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Double Click to start recording";
+            this.label1.Text = "Double Click to start recording or press ESC to cancel";
             // 
             // Select
             // 
@@ -56,6 +56,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TransparencyKey = System.Drawing.Color.White;
             this.DoubleClick += new System.EventHandler(this.Select_DoubleClick);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Select_KeyUp);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Select_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Select_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Select_MouseUp);

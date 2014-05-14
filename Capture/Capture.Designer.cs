@@ -90,6 +90,7 @@
             // 
             // saveFileDialog1
             // 
+            this.saveFileDialog1.DefaultExt = "gif";
             this.saveFileDialog1.Filter = "GIF(*.gif)|";
             // 
             // Capture

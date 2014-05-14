@@ -85,17 +85,23 @@ namespace Capture
         private void recordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Select s =r== null?new Select():new Select(r);
-            s.ShowDialog();
-           
+            recordToolStripMenuItem.Enabled = false;
+            if (s.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+            {
+                recordToolStripMenuItem.Enabled = true;
+                return;
+            }
             r = s.recData;
             if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                r.path = saveFileDialog1.FileName+".gif";
+                r.path = saveFileDialog1.FileName;
             }
             else
             {
+                recordToolStripMenuItem.Enabled = true;
                 return;
             }
+            recordToolStripMenuItem.Enabled = true;
             rec = true;
             Thread t = new Thread(new ParameterizedThreadStart(Record));
             t.Start(r);
