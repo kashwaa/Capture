@@ -1,0 +1,10 @@
+D:\sandbox\Capture\Capture\obj\x86\Debug\Capture.Capture.resources
+D:\sandbox\Capture\Capture\obj\x86\Debug\Capture.Properties.Resources.resources
+D:\sandbox\Capture\Capture\obj\x86\Debug\Capture.Select.resources
+D:\sandbox\Capture\Capture\obj\x86\Debug\Capture.csproj.GenerateResource.Cache
+D:\sandbox\Capture\Capture\obj\x86\Debug\Capture.pdb
+D:\sandbox\Capture\Capture\bin\Debug\Capture.exe
+D:\sandbox\Capture\Capture\bin\Debug\Capture.pdb
+D:\sandbox\Capture\Capture\obj\x86\Debug\Capture.csprojResolveAssemblyReference.cache
+D:\sandbox\Capture\Capture\obj\x86\Debug\Capture.exe
+D:\sandbox\Capture\Capture\bin\Debug\Capture.exe.config
