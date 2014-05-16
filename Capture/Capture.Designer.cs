@@ -46,7 +46,6 @@
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "Capture";
             this.notifyIcon1.Visible = true;
-            this.notifyIcon1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseClick);
             // 
             // contextMenuStrip1
             // 
@@ -91,7 +90,7 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.DefaultExt = "gif";
-            this.saveFileDialog1.Filter = "GIF(*.gif)|";
+            this.saveFileDialog1.Filter = "GIF|*.gif|AVI|*.avi";
             // 
             // Capture
             // 
@@ -101,7 +100,6 @@
             this.Name = "Capture";
             this.ShowInTaskbar = false;
             this.Text = "Capture";
-            this.Load += new System.EventHandler(this.Capture_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 

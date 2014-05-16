@@ -35,6 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.FFMPEG, Version=2.2.5.0, Culture=neutral, PublicKeyToken=03563089b1be05dd, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Video.FFMPEG.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,6 +61,9 @@
     <Compile Include="Capture.Designer.cs">
       <DependentUpon>Capture.cs</DependentUpon>
     </Compile>
+    <Compile Include="GIFRecorder.cs" />
+    <Compile Include="Recorder.cs" />
+    <Compile Include="RecorderFactory.cs" />
     <Compile Include="GifEncoder\AnimatedGifEncoder.cs" />
     <Compile Include="GifEncoder\LZWEncoder.cs" />
     <Compile Include="GifEncoder\NeuQuant.cs" />
@@ -65,6 +76,7 @@
     <Compile Include="Select.Designer.cs">
       <DependentUpon>Select.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIDRecorder.cs" />
     <EmbeddedResource Include="Capture.resx">
       <DependentUpon>Capture.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,8 +109,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <Content Include="VIDEncoder\avcodec-53.dll" />
+    <Content Include="VIDEncoder\avdevice-53.dll" />
+    <Content Include="VIDEncoder\avfilter-2.dll" />
+    <Content Include="VIDEncoder\avformat-53.dll" />
+    <Content Include="VIDEncoder\avutil-51.dll" />
+    <Content Include="VIDEncoder\postproc-52.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="VIDEncoder\swresample-0.dll" />
+    <Content Include="VIDEncoder\swscale-2.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(ProjectDir)\VIDEncoder\*.dll" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
